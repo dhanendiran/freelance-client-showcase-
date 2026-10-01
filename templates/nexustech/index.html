@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusTech — Premium Business & Digital Solutions</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+          <i data-lucide="layers" class="w-5 h-5"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-brand-600 to-indigo-600 dark:from-white dark:via-brand-400 dark:to-indigo-300">
+          NexusTech
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#services" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Services</a>
+        <a href="#showcase" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Showcase</a>
+        <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About Us</a>
+        <a href="#testimonials" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Buttons -->
+      <div class="hidden md:flex items-center gap-4">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="moonIcon" class="w-5 h-5 hidden dark:block"></i>
+          <i data-lucide="sun" id="sunIcon" class="w-5 h-5 block dark:hidden"></i>
+        </button>
+
+        <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md shadow-brand-500/20 hover:shadow-lg hover:shadow-brand-500/30 transition-all hover:-translate-y-0.5">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobileThemeToggle" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">
+          <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+          <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+        <button id="menuBtn" class="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-6 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <div class="flex flex-col gap-3 font-medium text-slate-700 dark:text-slate-300">
+        <a href="#services" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Services</a>
+        <a href="#showcase" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Showcase</a>
+        <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About Us</a>
+        <a href="#testimonials" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Reviews</a>
+        <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        <a href="#contact" class="mobile-nav-link mt-2 text-center py-2.5 rounded-xl bg-brand-600 text-white font-semibold">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative pt-36 pb-20 sm:pt-44 sm:pb-32 overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-brand-500/20 to-purple-500/20 blur-3xl pointer-events-none rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          <!-- Notification Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-800/80 text-brand-700 dark:text-brand-300 text-xs font-semibold mb-8 animate-fade-in">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Accepting New Projects for 2026
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-6">
+            Transforming Ideas Into <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-500 to-purple-600">High-Performance</span> Digital Realities
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
+            We build ultra-fast, visually captivating websites and software solutions designed to elevate your brand identity and convert visitors into loyal customers.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 transition-all hover:-translate-y-0.5">
+              <span>Start Your Project</span>
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </a>
+            <a href="#showcase" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-base transition-all">
+              <span>Explore Work</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Trust Badges / Quick Stats -->
+          <div class="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <p class="text-3xl font-extrabold text-slate-900 dark:text-white">99.8%</p>
+              <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium mt-1">Client Satisfaction</p>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-slate-900 dark:text-white">48 hrs</p>
+              <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium mt-1">Fast Turnaround</p>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-slate-900 dark:text-white">100+</p>
+              <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium mt-1">Projects Delivered</p>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-slate-900 dark:text-white">24/7</p>
+              <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium mt-1">Dedicated Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services" class="py-24 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-brand-600 dark:text-brand-400 text-sm font-bold uppercase tracking-wider">What We Deliver</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+            Tailored Solutions For Every Digital Need
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-4">
+            Everything you need to launch and scale your online presence seamlessly with cutting-edge technologies.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Custom Website Design</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Responsive, mobile-first websites tailored to your brand identity, incorporating custom typography, color harmony, and seamless UX.
+            </p>
+            <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">High-Converting Landing Pages</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Engineered for maximum lead generation with clear call-to-actions, lightning-fast load times, and conversion-optimized page copy.
+            </p>
+            <span class="text-purple-600 dark:text-purple-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="mail-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Interactive Contact & Lead Forms</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Integrated automated notifications delivering customer inquiries straight to your email or CRM without backend complexity.
+            </p>
+            <span class="text-emerald-600 dark:text-emerald-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/80 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">100% Mobile Responsiveness</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Pixel-perfect scaling across iPhones, iPads, Android devices, laptops, and ultra-wide desktop monitors.
+            </p>
+            <span class="text-amber-600 dark:text-amber-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/80 border border-sky-200 dark:border-sky-800 flex items-center justify-center text-sky-600 dark:text-sky-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="gauge" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">SEO & Performance Tuning</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Clean semantic markup, optimized images, and 95+ Google PageSpeed scores to rank higher in search results.
+            </p>
+            <span class="text-sky-600 dark:text-sky-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="group p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all hover:shadow-xl hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-800 flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="cloud-upload" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Instant Cloud Deployment</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Full deployment to Vercel, Netlify, or custom hosting servers with SSL certificates and custom domain wiring.
+            </p>
+            <span class="text-rose-600 dark:text-rose-400 font-semibold text-xs inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SHOWCASE / GALLERY SECTION ==================== -->
+    <section id="showcase" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+          <div>
+            <span class="text-brand-600 dark:text-brand-400 text-sm font-bold uppercase tracking-wider">Portfolio</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+              Recent Featured Projects
+            </h2>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+            A glimpse into custom web solutions crafted for high conversion and brand distinction.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+            <div class="h-52 bg-gradient-to-tr from-brand-600 to-indigo-500 relative flex items-center justify-center p-6 overflow-hidden">
+              <div class="w-full h-full bg-slate-900/20 backdrop-blur-sm rounded-xl border border-white/20 p-4 flex flex-col justify-between group-hover:scale-105 transition-transform">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-md bg-white/20 text-white text-xs font-medium">FinTech SaaS</span>
+                  <i data-lucide="external-link" class="w-4 h-4 text-white"></i>
+                </div>
+                <div class="text-white font-bold text-lg">Aether Analytics</div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 dark:text-white text-lg">Aether Analytics Dashboard</h4>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
+                Real-time financial performance analytics portal with interactive telemetry charts.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">HTML5</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Tailwind CSS</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+            <div class="h-52 bg-gradient-to-tr from-purple-600 to-pink-500 relative flex items-center justify-center p-6 overflow-hidden">
+              <div class="w-full h-full bg-slate-900/20 backdrop-blur-sm rounded-xl border border-white/20 p-4 flex flex-col justify-between group-hover:scale-105 transition-transform">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-md bg-white/20 text-white text-xs font-medium">E-Commerce</span>
+                  <i data-lucide="external-link" class="w-4 h-4 text-white"></i>
+                </div>
+                <div class="text-white font-bold text-lg">Aura Luxe Store</div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 dark:text-white text-lg">Aura Luxury Apparel</h4>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
+                Minimalist boutique digital storefront with fluid product filters and dynamic checkout.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Modern UX</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Catalog</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Responsive</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+            <div class="h-52 bg-gradient-to-tr from-emerald-600 to-teal-500 relative flex items-center justify-center p-6 overflow-hidden">
+              <div class="w-full h-full bg-slate-900/20 backdrop-blur-sm rounded-xl border border-white/20 p-4 flex flex-col justify-between group-hover:scale-105 transition-transform">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-md bg-white/20 text-white text-xs font-medium">Healthcare</span>
+                  <i data-lucide="external-link" class="w-4 h-4 text-white"></i>
+                </div>
+                <div class="text-white font-bold text-lg">CarePulse Clinic</div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 dark:text-white text-lg">CarePulse Health Center</h4>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
+                Accessible patient portal featuring doctor schedules and automated appointment intake.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Forms</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Accessibility</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Fast Load</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT US SECTION ==================== -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Content -->
+          <div>
+            <span class="text-brand-600 dark:text-brand-400 text-sm font-bold uppercase tracking-wider">About Our Studio</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 leading-tight">
+              We Craft High-Impact Web Experiences Designed to Grow Your Business
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-6 leading-relaxed">
+              We specialize in engineering modern digital storefronts and bespoke web presences. Whether you are launching a brand-new venture or revitalizing an existing brand, our process delivers polished, maintainable, and high-converting code.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="p-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 mt-1">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">Direct Client Collaboration</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Transparent daily progress updates with zero unexpected surprises.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 mt-1">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">Clean, Extensible Architecture</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Well-structured files that any developer or team can easily maintain.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 mt-1">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">Turnkey Delivery & Handover</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Includes complete setup guides, domain configuration, and launch support.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Feature Block / Card -->
+          <div class="relative">
+            <div class="rounded-3xl p-8 bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-2xl relative overflow-hidden border border-slate-700">
+              <div class="absolute -top-16 -right-16 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+              
+              <div class="flex items-center justify-between mb-8">
+                <span class="text-xs uppercase tracking-wider font-semibold text-brand-400">Guaranteed Quality</span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-medium">100% On-Time</span>
+              </div>
+
+              <h3 class="text-2xl font-bold mb-4">Why Work With Us?</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                "Our mission is simple: provide elite agency-grade design and engineering at freelancer agility and pricing."
+              </p>
+
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center font-bold text-lg text-white">
+                  D
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm">Dhanendiran M</p>
+                  <p class="text-xs text-slate-400">Lead Full-Stack & AI Solutions Engineer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS / REVIEWS ==================== -->
+    <section id="testimonials" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-brand-600 dark:text-brand-400 text-sm font-bold uppercase tracking-wider">Testimonials</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+            Trusted by Entrepreneurs & Teams
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-4">
+            Hear from clients who accelerated their businesses with our bespoke web templates.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex gap-1 text-amber-400 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic">
+                "Delivered our company landing page ahead of schedule. The contact form works seamlessly and the mobile layout is razor sharp. Outstanding communication!"
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300 font-bold flex items-center justify-center text-xs">
+                AW
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-900 dark:text-white">Arthur W.</p>
+                <p class="text-[11px] text-slate-500">Managing Partner, Eden Prairie</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex gap-1 text-amber-400 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic">
+                "The code is so clean and easy to update. We got our domain connected and started receiving inquiries on day one. Will definitely work together again."
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 font-bold flex items-center justify-center text-xs">
+                SL
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-900 dark:text-white">Sarah Lin</p>
+                <p class="text-[11px] text-slate-500">Founder, Aura Studios</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex gap-1 text-amber-400 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic">
+                "Exceptional quality. Fast load speeds, crisp animations, and the exact look and feel we wanted without endless back-and-forth."
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 font-bold flex items-center justify-center text-xs">
+                MR
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-900 dark:text-white">Marcus Ross</p>
+                <p class="text-[11px] text-slate-500">Operations Director</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT US SECTION ==================== -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-brand-600 dark:text-brand-400 text-sm font-bold uppercase tracking-wider">Contact Us</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+            Let's Build Something Exceptional Together
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-4">
+            Have a project in mind, need a quick website, or want a custom consultation? Drop a message below and we'll reply within a few hours.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Info Cards -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Email Inquiries</h4>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Direct replies within 4 hours</p>
+                <a href="mailto:dhanendiranm21@gmail.com" class="text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline mt-2 inline-block">
+                  dhanendiranm21@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                <i data-lucide="phone-call" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Direct Phone & WhatsApp</h4>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Mon–Fri from 9am to 7pm IST</p>
+                <a href="tel:+916380428785" class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm hover:underline mt-2 inline-block">
+                  +91 6380428785
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Location</h4>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Chennai, Tamil Nadu, India</p>
+                <p class="text-slate-500 text-xs mt-1">Serving clients worldwide (US, UK, India, Global)</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl">
+              
+              <form id="contactForm" class="space-y-6">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                      Full Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      required 
+                      placeholder="e.g. Arthur Watson"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                      Email Address *
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required 
+                      placeholder="e.g. arthur@example.com"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                      Service Needed
+                    </label>
+                    <select 
+                      id="service" 
+                      name="service" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+                    >
+                      <option value="quick-website">Quick Template Website ($100)</option>
+                      <option value="landing-page">High-Converting Landing Page</option>
+                      <option value="custom-app">Custom Web Application / React</option>
+                      <option value="bug-fix">Website Bug Fix / Redesign</option>
+                      <option value="other">Other Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="budget" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                      Estimated Budget
+                    </label>
+                    <select 
+                      id="budget" 
+                      name="budget" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+                    >
+                      <option value="50-150">$50 – $150 (Fast Turnaround)</option>
+                      <option value="150-500">$150 – $500</option>
+                      <option value="500+">$500+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                    Project Details & Requirements *
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Tell us about your brand, what pages you need, any links or logo attachments you have..."
+                    class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition resize-none"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  id="submitBtn"
+                  class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all flex items-center justify-center gap-2"
+                >
+                  <span id="btnText">Send Inquiry Now</span>
+                  <i data-lucide="send" id="btnIcon" class="w-5 h-5"></i>
+                </button>
+
+              </form>
+
+              <!-- Form Success Feedback Toast -->
+              <div id="formSuccessToast" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+                <div>
+                  <p class="font-bold text-sm">Message Sent Successfully!</p>
+                  <p class="text-xs text-emerald-700 dark:text-emerald-300">Thank you! We received your details and will get back to you shortly.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm">
+          N
+        </div>
+        <span class="text-white font-bold tracking-tight text-base">NexusTech Digital</span>
+        <span class="text-slate-600">|</span>
+        <span class="text-xs text-slate-400">Crafted with precision & speed</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs font-medium">
+        <a href="#hero" class="hover:text-white transition">Home</a>
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#showcase" class="hover:text-white transition">Showcase</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
+
+      <p class="text-xs text-slate-500">
+        &copy; 2026 NexusTech. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

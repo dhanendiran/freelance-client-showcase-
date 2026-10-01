@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Web Agency — Client Portfolio & Live Demos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Header -->
+    <header class="text-center space-y-4 mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available For Client Projects (24h Turnaround)
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+        Modern Web Development & <span class="bg-gradient-to-r from-teal-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">High-Converting Landing Pages</span>
+      </h1>
+      <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Fast, mobile-responsive, and conversion-optimized websites built with clean code and modern aesthetics.
+      </p>
+    </header>
+
+    <!-- Showcase Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      
+      <!-- Demo 1: Apex Dental Studio -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all flex flex-col justify-between group">
+        <div class="p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-400 bg-teal-400/10 px-2.5 py-1 rounded-lg">Local Business / Clinic</span>
+            <span class="text-xs text-slate-500">HTML5 + Tailwind CSS</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white group-hover:text-teal-300 transition-colors">Apex Dental & Smile Studio</h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            High-converting local healthcare & clinic template. Features appointment request booking, emergency call integration, services grid, patient reviews, and mobile quick-dial bar.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-xs text-slate-400">Target: Dentists, MedSpas, Salons, Contractors</span>
+          <a href="templates/apex-dental/index.html" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all">
+            <span>View Live Demo</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Demo 2: NexusTech -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-indigo-500/50 transition-all flex flex-col justify-between group">
+        <div class="p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-400/10 px-2.5 py-1 rounded-lg">SaaS / Agency / Tech</span>
+            <span class="text-xs text-slate-500">Dark / Light Mode + Forms</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">NexusTech Business & SaaS</h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Premium corporate & SaaS landing page. Includes dark/light mode toggle, 6-service offerings, portfolio showcase, customer testimonials, and verified lead capture form.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-xs text-slate-400">Target: Startups, Consultants, Agencies</span>
+          <a href="templates/nexustech/index.html" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all">
+            <span>View Live Demo</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pricing / Service Offerings for Clients -->
+    <div class="border border-slate-800 rounded-3xl p-8 bg-slate-900/50 mb-16">
+      <h3 class="text-xl font-bold text-white text-center mb-8">Standard Package Pricing</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+          <p class="text-sm font-semibold text-teal-400">Single Landing Page</p>
+          <p class="text-3xl font-extrabold text-white">$150 - $250</p>
+          <p class="text-xs text-slate-400">Delivered in 24 - 48 hours</p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+            <li>✓ Responsive (Mobile + Desktop)</li>
+            <li>✓ Contact / Lead Capture Form</li>
+            <li>✓ Clean HTML/CSS/Tailwind</li>
+            <li>✓ Free Deployment to Vercel/Netlify</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-teal-500/50 shadow-lg shadow-teal-500/10 space-y-3 relative">
+          <span class="absolute -top-3 right-4 bg-teal-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">Most Popular</span>
+          <p class="text-sm font-semibold text-teal-400">Full Business Website</p>
+          <p class="text-3xl font-extrabold text-white">$350 - $500</p>
+          <p class="text-xs text-slate-400">Delivered in 3 - 4 days</p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+            <li>✓ Up to 5 Custom Pages</li>
+            <li>✓ SEO Meta & Fast Performance</li>
+            <li>✓ Custom Branding & Graphics</li>
+            <li>✓ Domain & Email Setup Assistance</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+          <p class="text-sm font-semibold text-teal-400">Speed / Bug Fixes & Redesign</p>
+          <p class="text-3xl font-extrabold text-white">$50 - $150</p>
+          <p class="text-xs text-slate-400">Delivered Same-Day (4-8 hours)</p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-slate-800">
+            <li>✓ Mobile layout / CSS fixes</li>
+            <li>✓ Figma to Tailwind / React conversion</li>
+            <li>✓ Form fixes & integrations</li>
+            <li>✓ Immediate turnaround</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
